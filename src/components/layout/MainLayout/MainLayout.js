@@ -3,7 +3,7 @@ import styles from './MainLayout.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import Header from '../Header/Header';
+import Header from '../Header/HeaderContainer';
 
 const MainLayout = ({ children }) => {
   return (
