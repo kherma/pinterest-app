@@ -3,14 +3,12 @@ import styles from './MainLayout.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import Navbar from '../Navbar/Navbar';
+import Header from '../Header/Header';
 
 const MainLayout = ({ children }) => {
   return (
     <div className={clsx(styles.root)}>
-      <header className={styles.header}>
-        <Navbar />
-      </header>
+      <Header />
       <main className={styles.main}>{children}</main>
     </div>
   );
