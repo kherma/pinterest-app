@@ -27,6 +27,15 @@
   @include tablet {
     width: 5rem;
   }
+
+  @include mobile {
+    width: 4rem;
+    height: 4rem;
+
+    & > * {
+      font-size: 3rem;
+    }
+  }
 }
 
 @keyframes fadein {

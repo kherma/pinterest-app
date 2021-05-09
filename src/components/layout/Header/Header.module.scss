@@ -15,6 +15,12 @@
     padding: 1.5rem 5rem;
   }
 
+  @include mobile {
+    padding: 1rem 3rem;
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 3rem;
+  }
+
   &.light {
     background-color: $light;
     box-shadow: 0 0.3rem 0.5rem rgba($dark, 0.1);
@@ -23,5 +29,18 @@
   &.dark {
     border-bottom: 1px solid $grey-dark-3;
     background-color: $grey-dark-1;
+  }
+}
+
+.icon {
+  font-size: 2.7rem;
+  transition: all 0.3s;
+
+  &.light {
+    color: $dark;
+  }
+
+  &.dark {
+    color: $light;
   }
 }
