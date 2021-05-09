@@ -10,9 +10,18 @@
     justify-content: center;
   }
 
+  @include mobile {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   & .menuLink {
     &:not(:last-child) {
       margin-right: 5rem;
+
+      @include mobile {
+        margin: 3rem 0 5rem 0;
+      }
     }
 
     &:link,

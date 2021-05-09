@@ -8,8 +8,9 @@ import { FaBars } from 'react-icons/fa';
 import CameraLogo from '../../common/CameraLogo/CameraLogo';
 import Navbar from '../Navbar/NavbarContainer';
 import ThemeSwitch from '../../feature/ThemeSwitch/ThemeSwitchContainer';
+import AsideMobile from '../AsideMobile/AsideMobileContainer';
 
-const Header = ({ theme }) => {
+const Header = ({ theme, toggleAside }) => {
   return (
     <header
       className={clsx(
@@ -18,15 +19,19 @@ const Header = ({ theme }) => {
       )}
     >
       <CameraLogo />
-      {window.matchMedia('(min-width: 768px)').matches && <Navbar />}
+
+      {window.matchMedia('(min-width: 768px)').matches ? (
+        <Navbar />
+      ) : (
+        <AsideMobile>
+          <Navbar />
+        </AsideMobile>
+      )}
+
       <ThemeSwitch />
+
       {window.matchMedia('(max-width: 767px)').matches && (
-        <FaBars
-          className={clsx(
-            styles.icon,
-            theme === 'light' ? styles.light : styles.dark
-          )}
-        />
+        <FaBars onClick={toggleAside} className={styles.icon} />
       )}
     </header>
   );
@@ -34,6 +39,7 @@ const Header = ({ theme }) => {
 
 Header.propTypes = {
   theme: PropTypes.string,
+  toggleAside: PropTypes.func,
 };
 
 export default Header;

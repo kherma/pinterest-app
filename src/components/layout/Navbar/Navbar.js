@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
 
-const Navbar = ({ navLinks }) => {
+const Navbar = ({ navLinks, toggleAside }) => {
+  const toggler = () => {
+    window.matchMedia('(max-width: 767px)').matches && toggleAside();
+  };
+
   return (
     <nav className={clsx(styles.root)}>
       {navLinks.map(({ id, linkTo, text }) => (
@@ -15,6 +19,7 @@ const Navbar = ({ navLinks }) => {
           to={linkTo}
           className={styles.menuLink}
           activeClassName={styles.active}
+          onClick={toggler}
         >
           <p className={styles.menuText}>{text}</p>
         </NavLink>
@@ -25,6 +30,11 @@ const Navbar = ({ navLinks }) => {
 
 Navbar.propTypes = {
   navLinks: PropTypes.array,
+  toggleAside: PropTypes.func,
+};
+
+Navbar.defaultProps = {
+  navLinks: [],
 };
 
 export default Navbar;

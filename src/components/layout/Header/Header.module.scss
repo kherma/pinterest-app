@@ -25,22 +25,21 @@
     background-color: $light;
     box-shadow: 0 0.3rem 0.5rem rgba($dark, 0.1);
     border-bottom: 1px solid transparent;
+
+    & .icon {
+      color: $dark;
+    }
   }
   &.dark {
     border-bottom: 1px solid $grey-dark-3;
     background-color: $grey-dark-1;
+    & .icon {
+      color: $light;
+    }
   }
 }
 
 .icon {
   font-size: 2.7rem;
   transition: all 0.3s;
-
-  &.light {
-    color: $dark;
-  }
-
-  &.dark {
-    color: $light;
-  }
 }

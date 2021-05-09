@@ -5,6 +5,7 @@ export const initialState = {
     currentPage: 0,
     limitPerPage: 25,
     theme: 'light',
+    asideStatus: false,
     navigation: [
       { id: uuidv4(), text: 'explore', linkTo: '/' },
       { id: uuidv4(), text: 'favorites', linkTo: '/favorites' },
