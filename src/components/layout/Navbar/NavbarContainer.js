@@ -1,16 +1,9 @@
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
-import {
-  sampleSelector,
-  sampleActionCreator,
-} from '../../../redux/globalRedux';
+import { getNavLinks } from '../../../redux/appRedux';
 
 const mapStateToProps = (state) => ({
-  selector: sampleSelector(state),
+  navLinks: getNavLinks(state),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  action: (arg) => dispatch(sampleActionCreator(arg)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps)(Navbar);

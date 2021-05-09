@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 import clsx from 'clsx';
 
 import CameraLogo from '../../common/CameraLogo/CameraLogo';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../Navbar/NavbarContainer';
 
 const Header = () => {
   return (
