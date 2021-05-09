@@ -3,17 +3,20 @@ import styles from './MainLayout.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-const MainLayout = ({ className, children }) => {
+import Navbar from '../Navbar/Navbar';
+
+const MainLayout = ({ children }) => {
   return (
-    <div className={clsx(styles.root, className)}>
-      <h2>MainLayout</h2>
-      {children}
+    <div className={clsx(styles.root)}>
+      <header className={styles.header}>
+        <Navbar />
+      </header>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 };
 
 MainLayout.propTypes = {
-  className: PropTypes.string,
   children: PropTypes.node,
 };
 
