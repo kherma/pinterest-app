@@ -1,18 +1,35 @@
 import React from 'react';
 import styles from './Navbar.module.scss';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-const Navbar = ({ className }) => {
-  return (
-    <div className={clsx(styles.root, className)}>
-      <h2 className={styles.title}>Navbar</h2>
-    </div>
-  );
-};
+import { NavLink } from 'react-router-dom';
 
-Navbar.propTypes = {
-  className: PropTypes.string,
+import CameraLogo from '../../common/CameraLogo/CameraLogo';
+
+const Navbar = () => {
+  return (
+    <nav className={clsx(styles.root)}>
+      <CameraLogo />
+      <div className={styles.menuContainer}>
+        <NavLink
+          exact
+          to="/"
+          className={styles.menuLink}
+          activeClassName={styles.active}
+        >
+          <p className={styles.menuText}>home</p>
+        </NavLink>
+        <NavLink
+          exact
+          to="/favorites"
+          className={styles.menuLink}
+          activeClassName={styles.active}
+        >
+          <p className={styles.menuText}>favorites</p>
+        </NavLink>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
