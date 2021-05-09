@@ -4,6 +4,7 @@ export const initialState = {
   application: {
     currentPage: 0,
     limitPerPage: 25,
+    theme: 'light',
     navigation: [
       { id: uuidv4(), text: 'explore', linkTo: '/' },
       { id: uuidv4(), text: 'favorites', linkTo: '/favorites' },
