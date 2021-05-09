@@ -1,0 +1,104 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
+
+.cameraIcon {
+  position: relative;
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 1rem;
+  box-shadow: inset 0 0.7rem 0 0 $logo-pearl-2;
+  background-image: linear-gradient($logo-blue-2, $logo-blue-3),
+    linear-gradient($logo-pearl-2 10%, $logo-pearl-3 10%),
+    radial-gradient($logo-red-1 50%, transparent 50%),
+    linear-gradient($logo-blue-3 90%, transparent 90%),
+    linear-gradient($logo-pearl-1 70%, $logo-blue-1 70%);
+  background-size: 50% 10%, 15% 10%, 15% 15%, 10% 20%, 100% 100%;
+  background-position: center 90%, 10% 30%, 10% 45%, 90% 30%, center center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+
+  @include tablet {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  @include mobile {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &::before {
+    z-index: 10;
+    position: absolute;
+    content: '';
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: $logo-blue-1;
+    box-shadow: 0 0 0 0.5rem $logo-blue-3, 0 0 0 1rem $logo-blue-2,
+      0 0 0 1.2rem $logo-blue-3;
+    transition: all 0.3s;
+
+    @include tablet {
+      box-shadow: 0 0 0 0.3rem $logo-blue-3, 0 0 0 0.8rem $logo-blue-2,
+        0 0 0 1rem $logo-blue-3;
+    }
+
+    @include mobile {
+      box-shadow: 0 0 0 0.2rem $logo-blue-3, 0 0 0 0.5rem $logo-blue-2,
+        0 0 0 0.6rem $logo-blue-3;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    background-image: linear-gradient($logo-pink-1 70%, $logo-pink-2 70%),
+      linear-gradient($logo-yellow-1 70%, $logo-yellow-2 70%),
+      linear-gradient($logo-green-1 70%, $logo-green-2 70%);
+    background-size: 25% 100%, 50% 100%, 25% 100%;
+    background-position: left center, center center, right center;
+    background-repeat: no-repeat;
+  }
+
+  &:hover,
+  &:focus-within {
+    box-shadow: inset 0 0.3rem 0 0 $logo-pearl-2,
+      0 0 0.5rem 0.2rem rgba($dark, 0.2);
+    transform: scale(1.03);
+
+    &::before {
+      background-color: $light;
+      box-shadow: 0 0 0 0.9rem $logo-blue-3, 0 0 0 1.1rem $logo-blue-2,
+        0 0 0 1.2rem $logo-blue-3;
+    }
+
+    @include tablet {
+      box-shadow: inset 0 0.7rem 0 0 $logo-pearl-2;
+      transform: scale(1);
+
+      &::before {
+        box-shadow: 0 0 0 0.6rem $logo-blue-3, 0 0 0 0.9rem $logo-blue-2,
+          0 0 0 1rem $logo-blue-3;
+      }
+    }
+
+    @include mobile {
+      box-shadow: inset 0 0.7rem 0 0 $logo-pearl-2;
+      transform: scale(1);
+      &::before {
+        box-shadow: 0 0 0 0.2rem $logo-blue-3, 0 0 0 0.5rem $logo-blue-2,
+          0 0 0 0.6rem $logo-blue-3;
+      }
+    }
+  }
+}

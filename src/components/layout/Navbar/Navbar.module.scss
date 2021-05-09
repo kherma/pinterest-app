@@ -1,0 +1,98 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
+
+.root {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @include tablet {
+    justify-content: center;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  & .menuLink {
+    &:not(:last-child) {
+      margin-right: 5rem;
+
+      @include mobile {
+        margin: 3rem 0 5rem 0;
+      }
+    }
+
+    &:link,
+    &:visited {
+      position: relative;
+      color: $light;
+      border: 1px solid rgba($dark, 0.1);
+      width: 20rem;
+      height: 6rem;
+      padding: 0.5rem 0.5rem 0 0.5rem;
+      background-color: $grey-light-3;
+      box-shadow: 0.2rem 0.2rem 0.5rem rgba($dark, 0.2);
+      transition: all 0.3s;
+
+      @include tablet {
+        width: 16rem;
+      }
+    }
+
+    &::before,
+    &::after {
+      @include tape;
+      transition: all 0.4s;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &::before {
+      transform: rotate(-30deg);
+      top: 0;
+      left: -7%;
+    }
+
+    &::after {
+      transform: rotate(-20deg);
+      bottom: 0;
+      right: -10%;
+    }
+
+    &:hover,
+    &:focus-within {
+      letter-spacing: 0.3rem;
+      box-shadow: 0.5rem 0.5rem 0.5rem rgba($dark, 0.3);
+      transform: translate(-0.2rem, -0.2rem);
+    }
+
+    &.active,
+    &:active {
+      letter-spacing: 0;
+      box-shadow: 0.2rem 0.2rem 0.5rem rgba($dark, 0.2);
+      transform: translate(0, 0);
+      &::before,
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  & .menuText {
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0.5rem 0.4rem;
+    background-color: $grey-dark-1;
+    background-image: linear-gradient(
+      120deg,
+      transparent 30%,
+      $grey-dark-3 30%,
+      $grey-dark-3 50%,
+      transparent 50%
+    );
+  }
+}
