@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import ExplorePage from './ExplorePage';
 import {
-  sampleSelector,
-  sampleActionCreator,
-} from '../../../redux/globalRedux';
+  getAll,
+  getLoadingState,
+  fetchFromAPI,
+} from '../../../redux/imagesRedux';
 
 const mapStateToProps = (state) => ({
-  selector: sampleSelector(state),
+  images: getAll(state),
+  loading: getLoadingState(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  action: (arg) => dispatch(sampleActionCreator(arg)),
+  fatchData: () => dispatch(fetchFromAPI()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExplorePage);

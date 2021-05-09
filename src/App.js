@@ -10,7 +10,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 // ===========
 const ExplorePage = lazy(() =>
   import(
-    /* webpackPrefetch: true */ './components/view/ExplorePage/ExplorePage'
+    /* webpackPrefetch: true */ './components/view/ExplorePage/ExplorePageContainer'
   )
 );
 
