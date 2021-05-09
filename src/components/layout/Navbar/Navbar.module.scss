@@ -6,6 +6,10 @@
   justify-content: flex-end;
   align-items: center;
 
+  @include tablet {
+    justify-content: center;
+  }
+
   & .menuLink {
     &:not(:last-child) {
       margin-right: 5rem;
@@ -18,10 +22,14 @@
       border: 1px solid rgba($dark, 0.1);
       width: 20rem;
       height: 6rem;
-      padding: 0.5rem 0.5rem;
+      padding: 0.5rem 0.5rem 0 0.5rem;
       background-color: $grey-light-3;
       box-shadow: 0.2rem 0.2rem 0.5rem rgba($dark, 0.2);
       transition: all 0.3s;
+
+      @include tablet {
+        width: 16rem;
+      }
     }
 
     &::before,

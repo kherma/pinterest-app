@@ -11,6 +11,10 @@
   padding: 1rem 5rem;
   transition: all 0.3s;
 
+  @include tablet {
+    padding: 1.5rem 5rem;
+  }
+
   &.light {
     background-color: $light;
     box-shadow: 0 0.3rem 0.5rem rgba($dark, 0.1);
