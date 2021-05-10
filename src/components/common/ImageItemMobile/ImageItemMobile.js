@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { imgSize } from '../../../utils/itemIamgeSize';
 
-const ImageItemMobile = ({ id, author, width, height }) => {
+const ImageItemMobile = ({ id, author, width, height, url, toggleInfo }) => {
   return (
     <div className={clsx(styles.root)}>
       <Link to="/favorites">
@@ -20,7 +20,10 @@ const ImageItemMobile = ({ id, author, width, height }) => {
           alt={author}
         />
       </Link>
-      <button className={styles.btnMore}>
+      <button
+        className={styles.btnMore}
+        onClick={() => toggleInfo({ id, author, url })}
+      >
         <p>...</p>
       </button>
     </div>
@@ -32,6 +35,8 @@ ImageItemMobile.propTypes = {
   author: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number,
+  url: PropTypes.string,
+  toggleInfo: PropTypes.func,
 };
 
 export default ImageItemMobile;

@@ -1,16 +1,13 @@
 import { connect } from 'react-redux';
 import ImageItemMobile from './ImageItemMobile';
-import {
-  sampleSelector,
-  sampleActionCreator,
-} from '../../../redux/globalRedux';
+import { toggleImageInfo } from '../../../redux/infoRedux';
 
-const mapStateToProps = (state) => ({
-  selector: sampleSelector(state),
-});
+// const mapStateToProps = (state) => ({
+//   selector: sampleSelector(state),
+// });
 
 const mapDispatchToProps = (dispatch) => ({
-  action: (arg) => dispatch(sampleActionCreator(arg)),
+  toggleInfo: (arg) => dispatch(toggleImageInfo(arg)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImageItemMobile);
+export default connect(null, mapDispatchToProps)(ImageItemMobile);

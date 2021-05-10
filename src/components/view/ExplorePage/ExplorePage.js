@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import ImageItem from '../../common/ImageItem/ImageItem';
-import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobile';
+import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobileContainer';
 import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
 
 const ExplorePage = ({ images, loading, fatchData }) => {

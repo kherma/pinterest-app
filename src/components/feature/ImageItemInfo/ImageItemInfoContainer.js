@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import ImageItemInfo from './ImageItemInfo';
 import {
-  sampleSelector,
-  sampleActionCreator,
-} from '../../../redux/globalRedux';
+  getData,
+  getDisplayStatus,
+  toggleImageInfo,
+} from '../../../redux/infoRedux';
 
 const mapStateToProps = (state) => ({
-  selector: sampleSelector(state),
+  data: getData(state),
+  status: getDisplayStatus(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  action: (arg) => dispatch(sampleActionCreator(arg)),
+  toogleInfo: (arg) => dispatch(toggleImageInfo(arg)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImageItemInfo);

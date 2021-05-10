@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import Header from '../Header/HeaderContainer';
-import ImageItemInfo from '../../feature/ImageItemInfo/ImageItemInfo';
+import ImageItemInfo from '../../feature/ImageItemInfo/ImageItemInfoContainer';
 
 const MainLayout = ({ children }) => {
   return (
