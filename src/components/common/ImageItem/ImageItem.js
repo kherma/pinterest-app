@@ -4,23 +4,23 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-const ImageItem = ({ id, author, width, height, url, download_url }) => {
+import { imgSize } from '../../../utils/itemIamgeSize';
+
+const ImageItem = ({ id, author, width, height, url }) => {
   return (
     <div className={clsx(styles.root)}>
       <Link to="/favorites" className={styles.imgLink}>
         <img
           className={styles.img}
-          src={`https://picsum.photos/id/${id}/200/${Math.round(
-            (height * 200) / width
-          )}`}
+          src={`https://picsum.photos/id/${id}/200/${imgSize(width, height)}`}
           alt={author}
         />
       </Link>
       <span
         className={styles.overlay}
         style={{
-          width: '200px',
-          height: `${Math.round((height * 200) / width)}px`,
+          width: '20rem',
+          height: `${imgSize(width, height)}px`,
         }}
       ></span>
       <button className={styles.btnSave}>save</button>
@@ -38,7 +38,6 @@ ImageItem.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   url: PropTypes.string,
-  download_url: PropTypes.string,
 };
 
 export default ImageItem;
