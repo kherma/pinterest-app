@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import ImageItem from '../../common/ImageItem/ImageItem';
+import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobile';
 import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
 
 const ExplorePage = ({ images, loading, fatchData }) => {
@@ -14,9 +15,13 @@ const ExplorePage = ({ images, loading, fatchData }) => {
   return (
     <div className={clsx(styles.root)}>
       <MasonryGrid>
-        {images.map((item) => (
-          <ImageItem key={item.id} {...item} />
-        ))}
+        {images.map((item) => {
+          return window.matchMedia('(min-width: 1199px)').matches ? (
+            <ImageItem key={item.id} {...item} />
+          ) : (
+            <ImageItemMobile key={item.id} {...item} />
+          );
+        })}
       </MasonryGrid>
     </div>
   );

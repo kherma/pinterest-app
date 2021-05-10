@@ -12,17 +12,14 @@ const ImageItem = ({ id, author, width, height, url }) => {
       <Link to="/favorites" className={styles.imgLink}>
         <img
           className={styles.img}
-          src={`https://picsum.photos/id/${id}/200/${imgSize(width, height)}`}
+          src={`https://picsum.photos/id/${id}/200/${imgSize(
+            width,
+            height,
+            200
+          )}`}
           alt={author}
         />
       </Link>
-      <span
-        className={styles.overlay}
-        style={{
-          width: '20rem',
-          height: `${imgSize(width, height)}px`,
-        }}
-      ></span>
       <button className={styles.btnSave}>save</button>
       <a className={styles.btnLink} href={url} target="_blank" rel="noreferrer">
         source
