@@ -20,6 +20,10 @@ const FavoritesPage = lazy(() =>
   )
 );
 
+const ImagePage = lazy(() =>
+  import(/* webpackPrefetch: true */ './components/view/ImagePage/ImagePage')
+);
+
 const NotFoundPage = lazy(() =>
   import(
     /* webpackPrefetch: true */ './components/view/NotFoundPage/NotFoundPage'
@@ -35,6 +39,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={ExplorePage} />
               <Route exact path="/favorites" component={FavoritesPage} />
+              <Route exact path="/image/:id" component={ImagePage} />
               <Route exact path="*" component={NotFoundPage} />
             </Switch>
           </Suspense>

@@ -22,7 +22,12 @@ const ImageItemMobile = ({
         theme === 'light' ? styles.light : styles.dark
       )}
     >
-      <Link to="/favorites">
+      <Link
+        to={{
+          pathname: `/image/${id}`,
+          state: { id, author, url, width, height },
+        }}
+      >
         <img
           className={styles.img}
           src={`https://picsum.photos/id/${id}/300/${imgSize(
