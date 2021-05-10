@@ -22,12 +22,36 @@
     visibility: hidden;
     opacity: 0;
   }
+
+  &.light {
+    & .menu {
+      background-color: $light;
+    }
+
+    & .icon,
+    & .author,
+    & .text {
+      color: $dark;
+    }
+  }
+
+  &.dark {
+    & .menu {
+      background-color: $grey-dark-1;
+    }
+
+    & .icon,
+    & .author,
+    & .text {
+      color: $light;
+    }
+  }
 }
 
 .menu {
   width: 100%;
   height: 30%;
-  background-color: $light;
+  // background-color: $light;
   border-top-left-radius: 4rem;
   border-top-right-radius: 4rem;
   display: flex;

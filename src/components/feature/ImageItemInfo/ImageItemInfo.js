@@ -5,9 +5,20 @@ import clsx from 'clsx';
 
 import { IoClose } from 'react-icons/io5';
 
-const ImageItemInfo = ({ data: { id, author, url }, status, toogleInfo }) => {
+const ImageItemInfo = ({
+  data: { id, author, url },
+  status,
+  toogleInfo,
+  theme,
+}) => {
   return (
-    <section className={clsx(styles.root, status ? styles.show : styles.hide)}>
+    <section
+      className={clsx(
+        styles.root,
+        status ? styles.show : styles.hide,
+        theme === 'light' ? styles.light : styles.dark
+      )}
+    >
       <article className={styles.menu}>
         <header className={styles.header}>
           <IoClose className={styles.icon} onClick={() => toogleInfo({})} />
@@ -36,6 +47,7 @@ ImageItemInfo.propTypes = {
   data: PropTypes.object,
   status: PropTypes.bool,
   toogleInfo: PropTypes.func,
+  theme: PropTypes.string,
 };
 
 ImageItemInfo.defaultProps = {

@@ -7,6 +7,7 @@
   box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 1px solid rgba($dark, 0.1);
+  transition: all 0.3s;
 
   &:hover {
     & .btnSave,
@@ -14,6 +15,20 @@
     & .author {
       visibility: visible;
       opacity: 1;
+    }
+  }
+
+  &.light {
+    background-color: $light;
+    & .author {
+      color: $dark;
+    }
+  }
+
+  &.dark {
+    background-color: $grey-dark-3;
+    & .author {
+      color: $light;
     }
   }
 }

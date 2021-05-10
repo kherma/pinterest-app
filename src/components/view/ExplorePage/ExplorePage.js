@@ -3,7 +3,7 @@ import styles from './ExplorePage.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import ImageItem from '../../common/ImageItem/ImageItem';
+import ImageItem from '../../common/ImageItem/ImageItemContainer';
 import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobileContainer';
 import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
 

@@ -9,6 +9,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.3s;
+
+  &.light {
+    background-color: $light;
+    & .btnMore {
+      color: $dark;
+    }
+  }
+
+  &.dark {
+    background-color: $grey-dark-3;
+    & .btnMore {
+      color: $light;
+    }
+  }
 }
 
 .img {
@@ -21,4 +36,5 @@
   width: 2rem;
   height: 2rem;
   background-color: transparent;
+  transition: all 0.3s;
 }

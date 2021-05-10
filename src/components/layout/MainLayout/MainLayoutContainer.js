@@ -1,16 +1,13 @@
 import { connect } from 'react-redux';
 import MainLayout from './MainLayout';
-import {
-  sampleSelector,
-  sampleActionCreator,
-} from '../../../redux/globalRedux';
+import { getCurrentTheme } from '../../../redux/appRedux';
 
 const mapStateToProps = (state) => ({
-  selector: sampleSelector(state),
+  theme: getCurrentTheme(state),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  action: (arg) => dispatch(sampleActionCreator(arg)),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   action: (arg) => dispatch(sampleActionCreator(arg)),
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);
+export default connect(mapStateToProps)(MainLayout);

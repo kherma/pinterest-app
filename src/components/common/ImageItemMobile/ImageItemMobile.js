@@ -6,9 +6,22 @@ import { Link } from 'react-router-dom';
 
 import { imgSize } from '../../../utils/itemIamgeSize';
 
-const ImageItemMobile = ({ id, author, width, height, url, toggleInfo }) => {
+const ImageItemMobile = ({
+  id,
+  author,
+  width,
+  height,
+  url,
+  toggleInfo,
+  theme,
+}) => {
   return (
-    <div className={clsx(styles.root)}>
+    <div
+      className={clsx(
+        styles.root,
+        theme === 'light' ? styles.light : styles.dark
+      )}
+    >
       <Link to="/favorites">
         <img
           className={styles.img}
@@ -37,6 +50,7 @@ ImageItemMobile.propTypes = {
   height: PropTypes.number,
   url: PropTypes.string,
   toggleInfo: PropTypes.func,
+  theme: PropTypes.string,
 };
 
 export default ImageItemMobile;

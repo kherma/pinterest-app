@@ -6,9 +6,14 @@ import clsx from 'clsx';
 import Header from '../Header/HeaderContainer';
 import ImageItemInfo from '../../feature/ImageItemInfo/ImageItemInfoContainer';
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, theme }) => {
   return (
-    <div className={clsx(styles.root)}>
+    <div
+      className={clsx(
+        styles.root,
+        theme === 'light' ? styles.light : styles.dark
+      )}
+    >
       <Header />
       <main className={styles.main}>{children}</main>
       {window.matchMedia('(max-width: 1199px)').matches && <ImageItemInfo />}
@@ -18,6 +23,7 @@ const MainLayout = ({ children }) => {
 
 MainLayout.propTypes = {
   children: PropTypes.node,
+  theme: PropTypes.string,
 };
 
 export default MainLayout;
