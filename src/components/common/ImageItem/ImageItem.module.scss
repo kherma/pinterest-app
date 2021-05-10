@@ -1,0 +1,95 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
+
+.root {
+  position: relative;
+  background-color: $light;
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
+  padding: 1rem 1rem 0 1rem;
+
+  &:hover {
+    & .overlay,
+    & .btnSave,
+    & .btnLink,
+    & .author {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.imgLink {
+  cursor: zoom-in;
+}
+
+.img {
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.2);
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  background-color: rgba($dark, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.btnSave {
+  background-color: $primary-red-1;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  font-weight: $bold;
+  color: $grey-light-3;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+
+  &:hover {
+    background-color: $primary-red-2;
+  }
+
+  &:active {
+    background-color: $primary-red-1;
+  }
+}
+
+.btnLink {
+  &:link,
+  &:visited {
+    color: $dark;
+    padding: 0.5rem 1rem;
+    background-color: rgba($light, 0.5);
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-weight: $medium;
+    position: absolute;
+    bottom: 5.5rem;
+    right: 1.5rem;
+    transition: all 0.2s;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: $light;
+  }
+
+  &:active {
+    background-color: rgba($light, 0.7);
+  }
+}
+
+.author {
+  padding: 1rem 0;
+  text-align: center;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
