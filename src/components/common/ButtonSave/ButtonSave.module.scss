@@ -1,0 +1,17 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  border-radius: 3rem;
+  text-transform: uppercase;
+  font-weight: $bold;
+  color: $light;
+  background-color: $primary-red-1;
+
+  &:hover {
+    background-color: $primary-red-2;
+  }
+
+  &:active {
+    background-color: $primary-red-1;
+  }
+}
