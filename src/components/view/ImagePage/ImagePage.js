@@ -13,29 +13,36 @@ const ImagePage = ({
   },
 }) => {
   return (
-    <div className={clsx(styles.root)}>
+    <section className={clsx(styles.root)}>
       <Link to="/" className={styles.iconContainer}>
         <FaArrowLeft className={styles.icon} />
       </Link>
-      <div className={styles.imgContainer}>
-        <img
-          className={styles.img}
-          src={`https://picsum.photos/id/${id}/${500}/${imgSize(
-            width,
-            height,
-            500
-          )}`}
-          alt={author}
-        />
+      <div className={styles.dataWrapper}>
+        <div className={styles.imgContainer}>
+          <img
+            className={styles.img}
+            src={`https://picsum.photos/id/${id}/${500}/${imgSize(
+              width,
+              height,
+              500
+            )}`}
+            alt={author}
+          />
+        </div>
+        <div className={styles.infoContainer}>
+          <h5 className={styles.author}>{author}</h5>
+          <button className={styles.btnSave}>save</button>
+          <a
+            className={styles.link}
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            source
+          </a>
+        </div>
       </div>
-      <div className={styles.info}>
-        <h5 className={styles.author}>{author}</h5>
-        <button className={styles.btnSave}>save</button>
-        <a className={styles.link} href={url} target="_blank" rel="noreferrer">
-          source
-        </a>
-      </div>
-    </div>
+    </section>
   );
 };
 

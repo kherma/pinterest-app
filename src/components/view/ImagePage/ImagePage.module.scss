@@ -2,4 +2,100 @@
 @import '../../../styles/mixins.scss';
 
 .root {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 10rem;
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+}
+
+.iconContainer {
+  &:link,
+  &:visited {
+    width: 5%;
+    padding: 2rem 0;
+    text-align: center;
+    color: $dark;
+    transition: all 0.3s;
+  }
+
+  &:hover,
+  &:focus-within {
+    color: $grey-dark-3;
+  }
+
+  &:active {
+    color: $dark;
+  }
+
+  & .icon {
+    font-size: 3rem;
+  }
+}
+
+.dataWrapper {
+  margin: 0 auto;
+  max-width: 120rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.imgContainer {
+  width: 100%;
+
+  & .img {
+    width: 100%;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.2);
+    border-radius: 1rem;
+  }
+}
+
+.infoContainer {
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+  grid-gap: 2rem;
+  height: 20%;
+  text-align: center;
+  background-color: $light;
+  margin-left: 5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
+
+  & .author {
+    grid-column: 1/3;
+  }
+
+  & .btnSave {
+    grid-column: 1/2;
+    padding: 2rem 4rem;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    font-weight: $bold;
+    color: $light;
+    background-color: $primary-red-1;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $primary-red-2;
+    }
+  }
+
+  & .link {
+    grid-column: 2/3;
+    padding: 2rem 4rem;
+    border-radius: 3rem;
+    color: $dark;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: $bold;
+    background-color: $grey-light-3;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
+    transition: all 0.3s;
+
+    &:hover {
+      color: $light;
+      background-color: $grey-dark-1;
+    }
+  }
 }
