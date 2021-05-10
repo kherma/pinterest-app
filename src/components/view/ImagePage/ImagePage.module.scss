@@ -1,0 +1,210 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
+
+.root {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 10rem;
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+
+  &.light {
+    & .iconContainer {
+      &:link,
+      &:visited {
+        color: $dark;
+      }
+
+      &:hover,
+      &:focus-within {
+        color: $grey;
+      }
+
+      &:active {
+        color: $dark;
+      }
+    }
+
+    & .infoContainer {
+      background-color: $light;
+    }
+
+    & .author {
+      color: $dark;
+    }
+  }
+
+  &.dark {
+    & .iconContainer {
+      &:link,
+      &:visited {
+        color: $light;
+      }
+
+      &:hover,
+      &:focus-within {
+        color: $grey;
+      }
+
+      &:active {
+        color: $light;
+      }
+    }
+
+    & .infoContainer {
+      background-color: $grey-dark-3;
+    }
+
+    & .author {
+      color: $light;
+    }
+  }
+
+  @include tablet {
+    padding: 2rem 5rem;
+  }
+
+  @include mobile {
+    padding: 2rem 1rem;
+  }
+}
+
+.iconContainer {
+  &:link,
+  &:visited {
+    position: sticky;
+    top: 0;
+    width: 5%;
+    padding: 2rem 0;
+    text-align: center;
+    color: $dark;
+    transition: all 0.3s;
+  }
+
+  &:hover,
+  &:focus-within {
+    color: $grey;
+  }
+
+  &:active {
+    color: $dark;
+  }
+
+  & .icon {
+    font-size: 3rem;
+  }
+}
+
+.dataWrapper {
+  margin: 0 auto;
+  max-width: 120rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include tablet {
+    grid-template: auto 1fr / 1fr;
+  }
+
+  @include mobile {
+    grid-template: auto 1fr / 1fr;
+  }
+}
+
+.imgContainer {
+  width: 100%;
+
+  & .img {
+    width: 100%;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.2);
+    border-radius: 1rem;
+  }
+}
+
+.infoContainer {
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+  grid-gap: 2rem;
+  height: 20rem;
+  text-align: center;
+  background-color: $light;
+  margin-left: 5rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
+  transition: all 0.3s;
+
+  @include tablet {
+    margin: 5rem 0;
+  }
+
+  @include mobile {
+    margin: 3rem 0;
+  }
+
+  @include mobile-small {
+    grid-template: auto / 1fr;
+    height: 30rem;
+  }
+
+  & .author {
+    grid-column: 1/3;
+    transition: all 0.3s;
+
+    @include mobile-small {
+      grid-column: 1/2;
+    }
+  }
+
+  & .btnSave {
+    grid-column: 1/2;
+    padding: 2rem 4rem;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    font-weight: $bold;
+    color: $light;
+    background-color: $primary-red-1;
+    transition: all 0.3s;
+
+    @include mobile-small {
+      grid-column: 1/2;
+    }
+
+    &:hover {
+      background-color: $primary-red-2;
+    }
+  }
+
+  & .link {
+    grid-column: 2/3;
+    display: grid;
+    place-items: center;
+    padding: 2rem 4rem;
+    border-radius: 3rem;
+    color: $dark;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: $bold;
+    background-color: $grey-light-3;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
+    transition: all 0.3s;
+
+    @include mobile-small {
+      grid-column: 1/2;
+    }
+
+    &:hover {
+      color: $light;
+      background-color: $grey-dark-1;
+
+      @include tablet {
+        color: $dark;
+        background-color: $grey-light-3;
+      }
+
+      @include mobile {
+        color: $dark;
+        background-color: $grey-light-3;
+      }
+    }
+  }
+}

@@ -14,7 +14,13 @@ const ImageItem = ({ id, author, width, height, url, theme }) => {
         theme === 'light' ? styles.light : styles.dark
       )}
     >
-      <Link to="/favorites" className={styles.imgLink}>
+      <Link
+        to={{
+          pathname: `/image/${id}`,
+          state: { id, author, url, width, height },
+        }}
+        className={styles.imgLink}
+      >
         <img
           className={styles.img}
           src={`https://picsum.photos/id/${id}/200/${imgSize(
