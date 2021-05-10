@@ -5,6 +5,8 @@ import clsx from 'clsx';
 
 import { IoClose } from 'react-icons/io5';
 
+import ButtonContainer from '../ButtonContainer/ButtonContainerContainer';
+
 const ImageItemInfo = ({
   data: { id, author, url },
   status,
@@ -25,7 +27,7 @@ const ImageItemInfo = ({
           <h6 className={styles.author}>{author}</h6>
         </header>
         <main className={styles.main}>
-          <button className={styles.btnSave}>save</button>
+          <ButtonContainer id={id} className={styles.btn} />
           <a
             className={styles.link}
             href={url}

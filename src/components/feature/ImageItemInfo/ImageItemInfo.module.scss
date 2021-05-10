@@ -90,13 +90,8 @@
   flex-direction: column;
   justify-content: space-evenly;
 
-  & .btnSave {
+  & .btn {
     padding: 2rem 4rem;
-    border-radius: 3rem;
-    text-transform: uppercase;
-    font-weight: $bold;
-    color: $light;
-    background-color: $primary-red-1;
   }
 
   & .link {

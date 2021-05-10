@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 import { imgSize } from '../../../utils/itemIamgeSize';
 
+import ButtonContainer from '../../feature/ButtonContainer/ButtonContainerContainer';
+
 const ImageItem = ({ id, author, width, height, url, theme }) => {
   return (
     <div
@@ -31,7 +33,7 @@ const ImageItem = ({ id, author, width, height, url, theme }) => {
           alt={author}
         />
       </Link>
-      <button className={styles.btnSave}>save</button>
+      <ButtonContainer id={id} className={styles.btn} />
       <a className={styles.btnLink} href={url} target="_blank" rel="noreferrer">
         source
       </a>

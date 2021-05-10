@@ -6,6 +6,7 @@
   font-weight: $bold;
   color: $light;
   background-color: $primary-red-1;
+  transition: all 0.3s;
 
   &:hover {
     background-color: $primary-red-2;
