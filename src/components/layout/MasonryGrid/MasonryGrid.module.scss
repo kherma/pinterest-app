@@ -7,12 +7,24 @@
   display: flex;
   margin-left: -3rem; /* gutter size offset */
   width: auto;
+
+  @include mobile {
+    margin-left: -1rem;
+  }
 }
 .masonryGridColumn {
   padding-left: 3rem; /* gutter size */
   background-clip: padding-box;
+
+  @include mobile {
+    padding-left: 1rem;
+  }
 }
 
 .masonryGridColumn > div {
   margin-bottom: 3rem;
+
+  @include mobile {
+    margin-bottom: 1rem;
+  }
 }
