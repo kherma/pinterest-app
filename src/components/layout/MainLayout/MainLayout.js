@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './MainLayout.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -6,7 +6,11 @@ import clsx from 'clsx';
 import Header from '../Header/HeaderContainer';
 import ImageItemInfo from '../../feature/ImageItemInfo/ImageItemInfoContainer';
 
-const MainLayout = ({ children, theme }) => {
+const MainLayout = ({ children, theme, favoritesFromLocalstorage }) => {
+  useEffect(() => {
+    localStorage.getItem('favorites') && favoritesFromLocalstorage();
+  }, [favoritesFromLocalstorage]);
+
   return (
     <div
       className={clsx(
@@ -24,6 +28,7 @@ const MainLayout = ({ children, theme }) => {
 MainLayout.propTypes = {
   children: PropTypes.node,
   theme: PropTypes.string,
+  favoritesFromLocalstorage: PropTypes.func,
 };
 
 export default MainLayout;
