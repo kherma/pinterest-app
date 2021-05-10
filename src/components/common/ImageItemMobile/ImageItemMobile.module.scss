@@ -1,0 +1,40 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
+
+.root {
+  background-color: $light;
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border: 1px solid rgba($dark, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s;
+
+  &.light {
+    background-color: $light;
+    & .btnMore {
+      color: $dark;
+    }
+  }
+
+  &.dark {
+    background-color: $grey-dark-3;
+    & .btnMore {
+      color: $light;
+    }
+  }
+}
+
+.img {
+  width: 100%;
+  box-shadow: 0.1rem 0.1rem 0.3rem rgba($dark, 0.1);
+}
+
+.btnMore {
+  margin: 0.5rem 0 0.5rem auto;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  transition: all 0.3s;
+}

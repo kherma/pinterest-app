@@ -3,14 +3,14 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
-import MainLayout from './components/layout/MainLayout/MainLayout';
+import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 
 // ===========
 // Views
 // ===========
 const ExplorePage = lazy(() =>
   import(
-    /* webpackPrefetch: true */ './components/view/ExplorePage/ExplorePage'
+    /* webpackPrefetch: true */ './components/view/ExplorePage/ExplorePageContainer'
   )
 );
 

@@ -4,10 +4,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { initialState } from './initialState';
 import appReducer from './appRedux';
+import imagesReducer from './imagesRedux';
+import infoReducer from './infoRedux';
 
 // define reducers
 const reducers = {
   application: appReducer,
+  images: imagesReducer,
+  imageInfo: infoReducer,
 };
 
 // add blank reducers for initial state properties without reducers

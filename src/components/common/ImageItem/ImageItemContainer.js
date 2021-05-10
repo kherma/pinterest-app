@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MainLayout from './MainLayout';
+import ImageItem from './ImageItem';
 import { getCurrentTheme } from '../../../redux/appRedux';
 
 const mapStateToProps = (state) => ({
@@ -10,4 +10,4 @@ const mapStateToProps = (state) => ({
 //   action: (arg) => dispatch(sampleActionCreator(arg)),
 // });
 
-export default connect(mapStateToProps)(MainLayout);
+export default connect(mapStateToProps)(ImageItem);

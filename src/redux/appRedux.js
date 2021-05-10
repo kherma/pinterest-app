@@ -4,6 +4,7 @@ export const getPageLimit = ({ application }) => application.limitPerPage;
 export const getNavLinks = ({ application }) => application.navigation;
 export const getCurrentTheme = ({ application }) => application.theme;
 export const getAsideStatus = ({ application }) => application.asideStatus;
+export const getBreakpoints = ({ application }) => application.breakpoint;
 
 /* action name creator */
 const reducerName = 'application';

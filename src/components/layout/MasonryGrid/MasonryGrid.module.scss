@@ -1,0 +1,30 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
+
+.masonryGrid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -3rem; /* gutter size offset */
+  width: auto;
+
+  @include mobile {
+    margin-left: -1rem;
+  }
+}
+.masonryGridColumn {
+  padding-left: 3rem; /* gutter size */
+  background-clip: padding-box;
+
+  @include mobile {
+    padding-left: 1rem;
+  }
+}
+
+.masonryGridColumn > div {
+  margin-bottom: 3rem;
+
+  @include mobile {
+    margin-bottom: 1rem;
+  }
+}
