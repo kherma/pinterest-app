@@ -17,6 +17,10 @@ export const initialState = {
       { id: uuidv4(), text: 'favorites', linkTo: '/favorites' },
     ],
   },
+  imageInfo: {
+    display: false,
+    data: {},
+  },
   userData: {
     favorites: [],
   },
