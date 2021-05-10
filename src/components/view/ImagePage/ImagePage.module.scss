@@ -7,11 +7,21 @@
   padding: 2rem 10rem;
   display: grid;
   grid-template: auto 1fr / 1fr;
+
+  @include tablet {
+    padding: 2rem 5rem;
+  }
+
+  @include mobile {
+    padding: 2rem 1rem;
+  }
 }
 
 .iconContainer {
   &:link,
   &:visited {
+    position: sticky;
+    top: 0;
     width: 5%;
     padding: 2rem 0;
     text-align: center;
@@ -38,6 +48,14 @@
   max-width: 120rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @include tablet {
+    grid-template: auto 1fr / 1fr;
+  }
+
+  @include mobile {
+    grid-template: auto 1fr / 1fr;
+  }
 }
 
 .imgContainer {
@@ -54,16 +72,33 @@
   display: grid;
   grid-template: auto / repeat(2, 1fr);
   grid-gap: 2rem;
-  height: 20%;
+  height: 20rem;
   text-align: center;
   background-color: $light;
   margin-left: 5rem;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 1rem;
   box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
 
+  @include tablet {
+    margin: 5rem 0;
+  }
+
+  @include mobile {
+    margin: 3rem 0;
+  }
+
+  @include mobile-small {
+    grid-template: auto / 1fr;
+    height: 30rem;
+  }
+
   & .author {
     grid-column: 1/3;
+
+    @include mobile-small {
+      grid-column: 1/2;
+    }
   }
 
   & .btnSave {
@@ -76,6 +111,10 @@
     background-color: $primary-red-1;
     transition: all 0.3s;
 
+    @include mobile-small {
+      grid-column: 1/2;
+    }
+
     &:hover {
       background-color: $primary-red-2;
     }
@@ -83,6 +122,8 @@
 
   & .link {
     grid-column: 2/3;
+    display: grid;
+    place-items: center;
     padding: 2rem 4rem;
     border-radius: 3rem;
     color: $dark;
@@ -93,9 +134,23 @@
     box-shadow: 0.3rem 0.3rem 0.5rem rgba($dark, 0.1);
     transition: all 0.3s;
 
+    @include mobile-small {
+      grid-column: 1/2;
+    }
+
     &:hover {
       color: $light;
       background-color: $grey-dark-1;
+
+      @include tablet {
+        color: $dark;
+        background-color: $grey-light-3;
+      }
+
+      @include mobile {
+        color: $dark;
+        background-color: $grey-light-3;
+      }
     }
   }
 }
