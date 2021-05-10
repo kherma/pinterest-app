@@ -11,9 +11,15 @@ const ImagePage = ({
   location: {
     state: { id, author, url, width, height },
   },
+  theme,
 }) => {
   return (
-    <section className={clsx(styles.root)}>
+    <section
+      className={clsx(
+        styles.root,
+        theme === 'light' ? styles.light : styles.dark
+      )}
+    >
       <Link to="/" className={styles.iconContainer}>
         <FaArrowLeft className={styles.icon} />
       </Link>
@@ -48,6 +54,7 @@ const ImagePage = ({
 
 ImagePage.propTypes = {
   location: PropTypes.object,
+  theme: PropTypes.string,
 };
 
 ImagePage.defaultProps = {

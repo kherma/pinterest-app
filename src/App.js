@@ -21,7 +21,9 @@ const FavoritesPage = lazy(() =>
 );
 
 const ImagePage = lazy(() =>
-  import(/* webpackPrefetch: true */ './components/view/ImagePage/ImagePage')
+  import(
+    /* webpackPrefetch: true */ './components/view/ImagePage/ImagePageContainer'
+  )
 );
 
 const NotFoundPage = lazy(() =>
