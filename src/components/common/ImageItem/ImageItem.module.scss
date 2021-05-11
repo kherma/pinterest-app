@@ -10,7 +10,7 @@
   transition: all 0.3s;
 
   &:hover {
-    & .btnSave,
+    & .btn,
     & .btnLink,
     & .author {
       visibility: visible;
@@ -42,27 +42,14 @@
   box-shadow: 0.1rem 0.1rem 0.3rem rgba($dark, 0.1);
 }
 
-.btnSave {
-  background-color: $primary-red-1;
+.btn {
   padding: 1rem 2rem;
-  border-radius: 3rem;
-  text-transform: uppercase;
-  font-weight: $bold;
-  color: $grey-light-3;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
   transition: all 0.3s;
   visibility: hidden;
   opacity: 0;
-
-  &:hover {
-    background-color: $primary-red-2;
-  }
-
-  &:active {
-    background-color: $primary-red-1;
-  }
 }
 
 .btnLink {

@@ -6,12 +6,16 @@ import { initialState } from './initialState';
 import appReducer from './appRedux';
 import imagesReducer from './imagesRedux';
 import infoReducer from './infoRedux';
+import favoritesIDReducer from './favoritesIDRedux';
+import favoritesReducer from './favoritesRedux';
 
 // define reducers
 const reducers = {
   application: appReducer,
   images: imagesReducer,
   imageInfo: infoReducer,
+  favoritesID: favoritesIDReducer,
+  favorites: favoritesReducer,
 };
 
 // add blank reducers for initial state properties without reducers

@@ -1,20 +1,53 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './FavoritesPage.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
-const FavoritesPage = ({ className, children }) => {
+import ImageItem from '../../common/ImageItem/ImageItemContainer';
+import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobileContainer';
+import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
+
+const FavoritesPage = ({ data, loading, favoritesID, fetchData }) => {
+  useEffect(() => {
+    if (!data.length && favoritesID.length) {
+      fetchData();
+    }
+  }, [data, favoritesID, fetchData]);
+
   return (
-    <div className={clsx(styles.root, className)}>
-      <h2>FavoritesPage</h2>
-      {children}
+    <div className={clsx(styles.root)}>
+      {data.length ? (
+        <MasonryGrid>
+          {data.map((item) => {
+            return window.matchMedia('(min-width: 1199px)').matches ? (
+              <ImageItem key={item.id} {...item} />
+            ) : (
+              <ImageItemMobile key={item.id} {...item} />
+            );
+          })}
+        </MasonryGrid>
+      ) : (
+        <div className={styles.container}>
+          <p className={styles.text}>You haven&apos;t saved any Pins yet</p>
+          <Link to="/" className={styles.btnLink}>
+            Find ideas
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
 
 FavoritesPage.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
+  data: PropTypes.array,
+  loading: PropTypes.object,
+  favoritesID: PropTypes.array,
+  fetchData: PropTypes.func,
+};
+
+FavoritesPage.defaultProps = {
+  data: [],
 };
 
 export default FavoritesPage;

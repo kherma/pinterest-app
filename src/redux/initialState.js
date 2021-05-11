@@ -21,8 +21,15 @@ export const initialState = {
     display: false,
     data: {},
   },
-  userData: {
-    favorites: [],
+  favoritesID: {
+    data: [],
+  },
+  favorites: {
+    data: [],
+    loading: {
+      active: false,
+      error: false,
+    },
   },
   images: {
     data: [],

@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fatchData: () => dispatch(fetchFromAPI()),
+  fetchData: () => dispatch(fetchFromAPI()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExplorePage);

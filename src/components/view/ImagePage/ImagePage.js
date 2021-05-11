@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 
 import { FaArrowLeft } from 'react-icons/fa';
 
+import ButtonContainer from '../../feature/ButtonContainer/ButtonContainerContainer';
+
 const ImagePage = ({
   location: {
     state: { id, author, url, width, height },
@@ -37,7 +39,7 @@ const ImagePage = ({
         </div>
         <div className={styles.infoContainer}>
           <h5 className={styles.author}>{author}</h5>
-          <button className={styles.btnSave}>save</button>
+          <ButtonContainer id={id} className={styles.btn} />
           <a
             className={styles.link}
             href={url}
