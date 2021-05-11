@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import ButtonSave from './ButtonSave';
-import { addToFavorites } from '../../../redux/favoritesRedux';
+import { addIDToFavorites } from '../../../redux/favoritesIDRedux';
 
 const mapDispatchToProps = (dispatch) => ({
-  add: (arg) => dispatch(addToFavorites(arg)),
+  add: (arg) => dispatch(addIDToFavorites(arg)),
 });
 
 export default connect(null, mapDispatchToProps)(ButtonSave);

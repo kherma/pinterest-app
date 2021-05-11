@@ -1,16 +1,13 @@
 import { connect } from 'react-redux';
 import FavoritesPage from './FavoritesPage';
-import {
-  sampleSelector,
-  sampleActionCreator,
-} from '../../../redux/globalRedux';
+import { getFavorites } from '../../../redux/favoritesIDRedux';
 
 const mapStateToProps = (state) => ({
-  selector: sampleSelector(state),
+  data: getFavorites(state),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  action: (arg) => dispatch(sampleActionCreator(arg)),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   action: (arg) => dispatch(sampleActionCreator(arg)),
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FavoritesPage);
+export default connect(mapStateToProps)(FavoritesPage);

@@ -16,7 +16,7 @@ const ExplorePage = lazy(() =>
 
 const FavoritesPage = lazy(() =>
   import(
-    /* webpackPrefetch: true */ './components/view/FavoritesPage/FavoritesPage'
+    /* webpackPrefetch: true */ './components/view/FavoritesPage/FavoritesPageContainer'
   )
 );
 
