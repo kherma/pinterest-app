@@ -5,6 +5,7 @@ export const getNavLinks = ({ application }) => application.navigation;
 export const getCurrentTheme = ({ application }) => application.theme;
 export const getAsideStatus = ({ application }) => application.asideStatus;
 export const getBreakpoints = ({ application }) => application.breakpoint;
+export const getHasMore = ({ application }) => application.hasMore;
 
 /* action name creator */
 const reducerName = 'application';
@@ -34,9 +35,11 @@ export const changeAsideStatus = (payload) => ({
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case CHANGE_CURRENT_PAGE: {
+      const { currentPage, lastPage } = statePart;
       return {
         ...statePart,
-        currentPage: statePart.currentPage + 1,
+        hasMore: currentPage === lastPage ? false : true,
+        currentPage: statePart.hasMore ? currentPage + 1 : 0,
       };
     }
 

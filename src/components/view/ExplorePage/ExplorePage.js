@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styles from './ExplorePage.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -9,18 +9,14 @@ import ImageItem from '../../common/ImageItem/ImageItemContainer';
 import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobileContainer';
 import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
 
-const ExplorePage = ({ images, fetchData, changePage }) => {
-  const [more, setMore] = useState(true);
-
+const ExplorePage = ({ images, fetchData, changePage, more }) => {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
   const loadMore = () => {
-    setMore(false);
     changePage();
     fetchData();
-    setMore(true);
   };
 
   return (
@@ -33,6 +29,9 @@ const ExplorePage = ({ images, fetchData, changePage }) => {
         loader={<h4>Loading...</h4>}
         height={window.innerHeight - 100}
         scrollThreshold={0.8}
+        endMessage={
+          <p className={styles.endMEssage}>Yay! You have seen it all</p>
+        }
       >
         <MasonryGrid>
           {images.map((item) => {
@@ -53,6 +52,7 @@ ExplorePage.propTypes = {
   loading: PropTypes.object,
   fetchData: PropTypes.func,
   changePage: PropTypes.func,
+  more: PropTypes.bool,
 };
 
 ExplorePage.defaultProps = {
