@@ -2,9 +2,13 @@
 @import '../../../styles/mixins.scss';
 
 .root {
-  padding: 3rem;
-  min-height: 100%;
   max-width: 100vw;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gridContainer {
+  padding: 3rem;
 
   @include mobile {
     padding: 1rem;

@@ -16,8 +16,7 @@ const CHANGE_CURRENT_THEME = createActionName('CHANGE_CURRENT_THEME');
 const CHANGE_ASIDE_STATUS = createActionName('CHANGE_ASIDE_STATUS');
 
 /* action creators */
-export const changeCurrentPage = (payload) => ({
-  payload,
+export const changeCurrentPage = () => ({
   type: CHANGE_CURRENT_PAGE,
 });
 
@@ -37,7 +36,7 @@ export default function reducer(statePart = [], action = {}) {
     case CHANGE_CURRENT_PAGE: {
       return {
         ...statePart,
-        currentPage: action.payload,
+        currentPage: statePart.currentPage + 1,
       };
     }
 
