@@ -19,6 +19,24 @@ const ExplorePage = ({ images, fetchData, changePage, more }) => {
     fetchData();
   };
 
+  const calcHeight = () => {
+    let height;
+
+    if (window.matchMedia('(min-width: 1199px)').matches) {
+      height = window.innerHeight - 101;
+    }
+
+    if (window.matchMedia('(max-width: 1199px)').matches) {
+      height = window.innerHeight - 91;
+    }
+
+    if (window.matchMedia('(max-width: 700px)').matches) {
+      height = window.innerHeight - 61;
+    }
+
+    return height;
+  };
+
   return (
     <div className={clsx(styles.root)}>
       <InfiniteScroll
@@ -27,7 +45,7 @@ const ExplorePage = ({ images, fetchData, changePage, more }) => {
         next={loadMore}
         hasMore={more}
         loader={<h4>Loading...</h4>}
-        height={window.innerHeight - 100}
+        height={calcHeight()}
         scrollThreshold={0.8}
         endMessage={
           <p className={styles.endMEssage}>Yay! You have seen it all</p>
