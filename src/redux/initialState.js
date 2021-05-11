@@ -3,7 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 export const initialState = {
   application: {
     currentPage: 1,
+    lastPage: 40,
     limitPerPage: 25,
+    hasMore: true,
     theme: 'light',
     asideStatus: false,
     breakpoint: {

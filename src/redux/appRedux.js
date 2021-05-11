@@ -5,6 +5,7 @@ export const getNavLinks = ({ application }) => application.navigation;
 export const getCurrentTheme = ({ application }) => application.theme;
 export const getAsideStatus = ({ application }) => application.asideStatus;
 export const getBreakpoints = ({ application }) => application.breakpoint;
+export const getHasMore = ({ application }) => application.hasMore;
 
 /* action name creator */
 const reducerName = 'application';
@@ -16,8 +17,7 @@ const CHANGE_CURRENT_THEME = createActionName('CHANGE_CURRENT_THEME');
 const CHANGE_ASIDE_STATUS = createActionName('CHANGE_ASIDE_STATUS');
 
 /* action creators */
-export const changeCurrentPage = (payload) => ({
-  payload,
+export const changeCurrentPage = () => ({
   type: CHANGE_CURRENT_PAGE,
 });
 
@@ -35,9 +35,11 @@ export const changeAsideStatus = (payload) => ({
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case CHANGE_CURRENT_PAGE: {
+      const { currentPage, lastPage } = statePart;
       return {
         ...statePart,
-        currentPage: action.payload,
+        hasMore: currentPage === lastPage ? false : true,
+        currentPage: statePart.hasMore ? currentPage + 1 : 0,
       };
     }
 
