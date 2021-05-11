@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+import Loading from './components/common/Loading/LoadingContainer';
 import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 
 // ===========
@@ -37,7 +38,7 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <MainLayout>
-          <Suspense fallback={<h2>Loading Page...</h2>}>
+          <Suspense fallback={<Loading />}>
             <Switch>
               <Route exact path="/" component={ExplorePage} />
               <Route exact path="/favorites" component={FavoritesPage} />

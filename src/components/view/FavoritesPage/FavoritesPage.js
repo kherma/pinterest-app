@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import ImageItem from '../../common/ImageItem/ImageItemContainer';
 import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobileContainer';
 import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
+import Loading from '../../common/Loading/LoadingContainer';
 
 const FavoritesPage = ({ data, loading, favoritesID, fetchData }) => {
   useEffect(() => {
@@ -27,6 +28,8 @@ const FavoritesPage = ({ data, loading, favoritesID, fetchData }) => {
             );
           })}
         </MasonryGrid>
+      ) : loading.active ? (
+        <Loading />
       ) : (
         <div className={styles.container}>
           <p className={styles.text}>You haven&apos;t saved any Pins yet</p>
@@ -48,6 +51,7 @@ FavoritesPage.propTypes = {
 
 FavoritesPage.defaultProps = {
   data: [],
+  loading: { active: false },
 };
 
 export default FavoritesPage;

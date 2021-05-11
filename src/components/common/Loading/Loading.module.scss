@@ -1,0 +1,47 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/mixins.scss';
+
+.root {
+  width: 100%;
+  margin-top: 5rem;
+  &.light {
+    & .loading {
+      border-top: 0.5rem solid $dark;
+      border-left: 0.5rem solid $grey;
+      border-right: 0.5rem solid $grey;
+      border-bottom: 0.5rem solid $grey;
+      animation: rotate 1s linear infinite;
+    }
+  }
+
+  &.dark {
+    & .loading {
+      border-top: 0.5rem solid $light;
+      border-left: 0.5rem solid $grey;
+      border-right: 0.5rem solid $grey;
+      border-bottom: 0.5rem solid $grey;
+      animation: rotate 1s linear infinite;
+    }
+  }
+}
+
+.loading {
+  display: block;
+  margin: 0 auto;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border-top: 0.5rem solid $dark;
+  border-left: 0.5rem solid $grey;
+  border-right: 0.5rem solid $grey;
+  border-bottom: 0.5rem solid $grey;
+  animation: rotate 1s linear infinite;
+  transition: all 0.3s;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
