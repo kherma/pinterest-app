@@ -3,7 +3,7 @@
 
 .root {
   width: 100%;
-
+  margin-top: 5rem;
   &.light {
     & .loading {
       border-top: 0.5rem solid $dark;

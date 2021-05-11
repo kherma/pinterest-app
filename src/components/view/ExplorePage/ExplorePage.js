@@ -8,6 +8,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import ImageItem from '../../common/ImageItem/ImageItemContainer';
 import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobileContainer';
 import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
+import Loading from '../../common/Loading/LoadingContainer';
 
 const ExplorePage = ({ images, fetchData, changePage, more }) => {
   useEffect(() => {
@@ -44,7 +45,7 @@ const ExplorePage = ({ images, fetchData, changePage, more }) => {
         dataLength={images.length}
         next={loadMore}
         hasMore={more}
-        loader={<h4>Loading...</h4>}
+        loader={<Loading />}
         height={calcHeight()}
         scrollThreshold={0.8}
         endMessage={
