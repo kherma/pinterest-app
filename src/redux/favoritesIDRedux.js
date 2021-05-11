@@ -2,7 +2,7 @@
 export const getFavorites = ({ favoritesID }) => favoritesID.data;
 
 /* action name creator */
-const reducerName = 'favorites';
+const reducerName = 'favoritesID';
 const createActionName = (name) => `action/${reducerName}/${name}`;
 
 /* action types */
@@ -32,7 +32,6 @@ export default function reducer(statePart = [], action = {}) {
       const newState = [...statePart.data];
       newState.push(action.payload);
       localStorage.setItem('favorites', JSON.stringify(newState));
-      console.log(statePart);
       return {
         ...statePart,
         data: newState,

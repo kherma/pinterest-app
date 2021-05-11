@@ -7,10 +7,10 @@ import ImageItem from '../../common/ImageItem/ImageItemContainer';
 import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobileContainer';
 import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
 
-const ExplorePage = ({ images, loading, fatchData }) => {
+const ExplorePage = ({ images, loading, fetchData }) => {
   useEffect(() => {
-    fatchData();
-  }, [fatchData]);
+    fetchData();
+  }, [fetchData]);
 
   return (
     <div className={clsx(styles.root)}>
@@ -30,7 +30,7 @@ const ExplorePage = ({ images, loading, fatchData }) => {
 ExplorePage.propTypes = {
   images: PropTypes.array,
   loading: PropTypes.object,
-  fatchData: PropTypes.func,
+  fetchData: PropTypes.func,
 };
 
 ExplorePage.defaultProps = {

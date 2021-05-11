@@ -2,8 +2,15 @@ import { connect } from 'react-redux';
 import ButtonSave from './ButtonSave';
 import { addIDToFavorites } from '../../../redux/favoritesIDRedux';
 
-const mapDispatchToProps = (dispatch) => ({
-  add: (arg) => dispatch(addIDToFavorites(arg)),
+import { getLoading, fetchSingleFromAPI } from '../../../redux/favoritesRedux';
+
+const mapStateToProps = (state) => ({
+  loading: getLoading(state),
 });
 
-export default connect(null, mapDispatchToProps)(ButtonSave);
+const mapDispatchToProps = (dispatch) => ({
+  add: (arg) => dispatch(addIDToFavorites(arg)),
+  fetch: (arg) => dispatch(fetchSingleFromAPI(arg)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ButtonSave);
