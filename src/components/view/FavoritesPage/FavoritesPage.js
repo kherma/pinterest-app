@@ -8,7 +8,13 @@ import ImageItem from '../../common/ImageItem/ImageItemContainer';
 import ImageItemMobile from '../../common/ImageItemMobile/ImageItemMobileContainer';
 import MasonryGrid from '../../layout/MasonryGrid/MasonryGridContainer';
 
-const FavoritesPage = ({ data, loading }) => {
+const FavoritesPage = ({ data, loading, favoritesID, fetchData }) => {
+  useEffect(() => {
+    if (!data.length && favoritesID.length) {
+      fetchData();
+    }
+  }, [data, favoritesID, fetchData]);
+
   return (
     <div className={clsx(styles.root)}>
       {data.length ? (
@@ -36,6 +42,8 @@ const FavoritesPage = ({ data, loading }) => {
 FavoritesPage.propTypes = {
   data: PropTypes.array,
   loading: PropTypes.object,
+  favoritesID: PropTypes.array,
+  fetchData: PropTypes.func,
 };
 
 FavoritesPage.defaultProps = {

@@ -40,6 +40,31 @@ export const fetchSingleFromAPI = (id) => {
   };
 };
 
+export const fetchAllFromAPI = () => {
+  return (dispatch, getState) => {
+    dispatch(fetchStarted());
+
+    const {
+      favoritesID: { data: favIDData },
+    } = getState();
+
+    favIDData.forEach((id) => {
+      Axios.get(`https://picsum.photos/id/${id}/info`)
+        .then((res) => {
+          dispatch(addSingle(res.data));
+        })
+        .then((res) => {
+          if (getState().favorites.data.length === favIDData.length) {
+            dispatch(fetchSuccess());
+          }
+        })
+        .catch((err) => {
+          dispatch(fetchError(err.message || true));
+        });
+    });
+  };
+};
+
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
