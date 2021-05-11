@@ -3,18 +3,18 @@ import styles from './ImagePage.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { imgSize } from '../../../utils/itemIamgeSize';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { FaArrowLeft } from 'react-icons/fa';
 
 import ButtonContainer from '../../feature/ButtonContainer/ButtonContainerContainer';
-
 const ImagePage = ({
   location: {
     state: { id, author, url, width, height },
   },
   theme,
 }) => {
+  const history = useHistory();
   return (
     <section
       className={clsx(
@@ -22,9 +22,14 @@ const ImagePage = ({
         theme === 'light' ? styles.light : styles.dark
       )}
     >
-      <Link to="/" className={styles.iconContainer}>
+      <button
+        onClick={() => {
+          history.goBack();
+        }}
+        className={styles.iconContainer}
+      >
         <FaArrowLeft className={styles.icon} />
-      </Link>
+      </button>
       <div className={styles.dataWrapper}>
         <div className={styles.imgContainer}>
           <img

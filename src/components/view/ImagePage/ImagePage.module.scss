@@ -10,10 +10,7 @@
 
   &.light {
     & .iconContainer {
-      &:link,
-      &:visited {
-        color: $dark;
-      }
+      color: $dark;
 
       &:hover,
       &:focus-within {
@@ -36,10 +33,7 @@
 
   &.dark {
     & .iconContainer {
-      &:link,
-      &:visited {
-        color: $light;
-      }
+      color: $light;
 
       &:hover,
       &:focus-within {
@@ -70,16 +64,14 @@
 }
 
 .iconContainer {
-  &:link,
-  &:visited {
-    position: sticky;
-    top: 0;
-    width: 5%;
-    padding: 2rem 0;
-    text-align: center;
-    color: $dark;
-    transition: all 0.3s;
-  }
+  position: sticky;
+  top: 0;
+  width: 5%;
+  padding: 2rem 0;
+  text-align: center;
+  color: $dark;
+  transition: all 0.3s;
+  background-color: transparent;
 
   &:hover,
   &:focus-within {
