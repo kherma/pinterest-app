@@ -1,5 +1,72 @@
 @import '../../../styles/settings.scss';
 @import '../../../styles/mixins.scss';
 
-// .root {
-// }
+.root {
+  padding: 3rem;
+  min-height: 100%;
+  max-width: 100vw;
+
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+.container {
+  text-align: center;
+
+  @include mobile {
+    margin-top: 3rem;
+  }
+
+  & .text {
+    text-transform: uppercase;
+    color: $grey;
+    font-size: 2rem;
+
+    @include mobile-small {
+      font-size: 1.6rem;
+    }
+  }
+
+  & .btnLink {
+    &:link,
+    &:visited {
+      display: inline-block;
+      margin-top: 3rem;
+      background-color: $dark;
+      color: $light;
+      padding: 2rem 4rem;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      border-radius: 3rem;
+      transition: all 0.3s;
+
+      @include mobile-small {
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
+        margin-top: 2rem;
+      }
+    }
+
+    &:hover,
+    &:focus-within {
+      background-color: $light;
+      color: $dark;
+
+      @include tablet {
+        background-color: $dark;
+        color: $light;
+      }
+
+      @include mobile {
+        background-color: $dark;
+        color: $light;
+      }
+    }
+
+    &:active {
+      background-color: $dark;
+      color: $light;
+    }
+  }
+}
