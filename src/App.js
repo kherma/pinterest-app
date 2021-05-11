@@ -28,7 +28,7 @@ const ImagePage = lazy(() =>
 
 const NotFoundPage = lazy(() =>
   import(
-    /* webpackPrefetch: true */ './components/view/NotFoundPage/NotFoundPage'
+    /* webpackPrefetch: true */ './components/view/NotFoundPage/NotFoundPageContainer'
   )
 );
 
